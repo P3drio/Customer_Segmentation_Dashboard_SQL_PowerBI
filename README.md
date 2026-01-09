@@ -15,3 +15,12 @@ This project analyzes retail transaction data to extract business insights relat
 ├── SQL/ # SQL scripts and queries
 └── README.md
 ├── requirements.txt # Python dependencies
+
+## Environment Setup
+
+### 1. Create virtual environment
+.\.venv\Scripts\Activate.ps1
+
+pip install -r requirements.txt
+
+python python/load_to_db.py
