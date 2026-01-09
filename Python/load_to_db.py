@@ -1,10 +1,15 @@
+import os
 import pandas as pd
 from sqlalchemy import create_engine
-import os
+
 
 # Paths
-RAW_DATA_PATH = os.path.join('..', 'data', 'raw', 'online_retail_II.csv')
-DB_PATH = os.path.join('..', 'data', 'retail.db')
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))       # folder containing this script
+PROJECT_ROOT = os.path.abspath(os.path.join(BASE_DIR, ".."))  # project root
+
+RAW_DATA_PATH = os.path.join(PROJECT_ROOT, "data", "raw", "online_retail_II.csv")
+DB_PATH = os.path.join(PROJECT_ROOT, "data", "retail.db")
 
 # Load raw dataset
 df = pd.read_csv(RAW_DATA_PATH, encoding='unicode_escape')
