@@ -1,1 +1,1 @@
-# Customer_Segmentation_Dashboard_SQL_PowerBI
+# customer-segmentation-sql-powerbi
