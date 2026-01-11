@@ -10,7 +10,7 @@ SELECT
     Description,
     Quantity,
     InvoiceDate,
-    Price,
-    "Customer ID" AS CustomerID,
+    UnitPrice,
+    CustomerID,
     Country
 FROM online_retail_raw;

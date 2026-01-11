@@ -9,14 +9,14 @@ WHERE Invoice LIKE 'C%';
 DELETE FROM online_retail_clean
 WHERE CustomerID IS NULL
    OR Quantity <= 0
-   OR Price <= 0;
+   OR UnitPrice <= 0;
 
 -- Add total transaction value
 ALTER TABLE online_retail_clean
 ADD COLUMN TotalPrice REAL;
 
 UPDATE online_retail_clean
-SET TotalPrice = Quantity * Price;
+SET TotalPrice = Quantity * UnitPrice;
 
 -- Remove duplicates
 DELETE FROM online_retail_clean
@@ -28,6 +28,6 @@ WHERE rowid NOT IN (
         StockCode,
         Quantity,
         InvoiceDate,
-        Price,
+        UnitPrice,
         CustomerID
 );

@@ -7,8 +7,14 @@ SELECT
     Monetary,
     LastPurchaseDate,
     CASE
-        WHEN Monetary >= 10000 AND Frequency >= 50 THEN 'High Value'
-        WHEN Monetary >= 5000 THEN 'Medium Value'
+        WHEN Monetary >= 1000 AND Frequency >= 10 THEN 'High Value'
+        WHEN Monetary >= 150 THEN 'Medium Value'
         ELSE 'Low Value'
     END AS Segment
 FROM customer_metrics;
+
+DROP TABLE IF EXISTS customer_summary;
+
+CREATE TABLE customer_summary AS
+SELECT *
+FROM customer_segments;
